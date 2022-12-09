@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,6 +17,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.bg {
+  background: url(../public//images/bungalow-3.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.active {
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: dark) {
