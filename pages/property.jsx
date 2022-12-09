@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../data';
 import Image from 'next/image';
 import { useGlobalContext } from './context';
-import Side from '../components/side';
+import Side from '../components/Side';
 
 export default function Properties() {
   const { searchValue } = useGlobalContext();
