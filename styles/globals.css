@@ -30,6 +30,11 @@ a {
   font-weight: bold;
 }
 
+.container {
+  width: 90%;
+  margin: auto;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

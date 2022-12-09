@@ -13,7 +13,7 @@ export default function Content() {
       <div className="">
         <TopContent />
       </div>
-      <h1 className="text-center text-2xl  mt-16 mb-8 font-bold text-main">
+      <h1 className="text-center md:text-2xl  mt-16 mb-8 font-bold text-main">
         HOT SELLING PROPERTIES
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
