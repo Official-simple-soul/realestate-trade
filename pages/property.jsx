@@ -3,6 +3,7 @@ import data from '../data';
 import Image from 'next/image';
 import { useGlobalContext } from '../contexts/Context';
 import Side from '../components/Side';
+import Link from 'next/link';
 
 export default function Properties() {
   const { searchValue } = useGlobalContext();
@@ -35,7 +36,11 @@ export default function Properties() {
                     <p>{item.landSize}</p>
                     <p>₦{item.price} Million</p>
                 </div>
-                <button className='text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white'>View</button>
+                <Link href={`/viewproperty/${item.id}`}>
+                <button className="text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white">
+                    View
+                </button>
+              </Link>
               </div>
              
             })
@@ -57,7 +62,11 @@ export default function Properties() {
                     <p>{item.landSize}</p>
                     <p>₦{item.price} Million</p>
                 </div>
-                <button className='text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white'>View</button>
+                <Link href={`/viewproperty/${item.id}`}>
+                <button className="text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white">
+                    View
+                </button>
+              </Link>
               </div>
              
             })
@@ -78,7 +87,11 @@ export default function Properties() {
                   <p>{item.landSize}</p>
                   <p>₦{item.price} Million</p>
               </div>
-              <button className='text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white'>View</button>
+              <Link href={`/viewproperty/${item.id}`}>
+                <button className="text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white">
+                    View
+                </button>
+              </Link>
             </div>
            
             })
@@ -99,7 +112,11 @@ export default function Properties() {
                     <p>{item.landSize}</p>
                     <p>₦{item.price} Million</p>
                 </div>
-                <button className='text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white'>View</button>
+                <Link href={`/viewproperty/${item.id}`}>
+                <button className="text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white">
+                    View
+                </button>
+              </Link>
               </div>
             })
             :data.map((item, idx)=>{
@@ -119,7 +136,11 @@ export default function Properties() {
                     <p>{item.landSize}</p>
                     <p>₦{item.price} Million</p>
                 </div>
-                <button className='text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white'>View</button>
+                <Link href={`/viewproperty/${item.id}`}>
+                <button className="text-sm border px-3 mt-3 py-1 shadow-lg bg-main rounded-md text-white">
+                    View
+                </button>
+              </Link>
               </div>
              
             })
