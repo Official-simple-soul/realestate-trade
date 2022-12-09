@@ -3,7 +3,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useGlobalContext } from '../pages/context';
+import { useGlobalContext } from '../contexts/Context';
 
 export default function SearchInput({setOpenMenu, openMenu, properties, setSearchInput, searchInput}) {
 const {searchValue, setSearchValue} = useGlobalContext()

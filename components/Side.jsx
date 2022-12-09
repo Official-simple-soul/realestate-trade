@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
-import { useGlobalContext } from '../pages/context';
+import { useGlobalContext } from '../contexts/Context';
 
 export default function Side() {
   const [openTray, setOpenTray] = useState(false);
