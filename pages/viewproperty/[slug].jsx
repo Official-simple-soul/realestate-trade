@@ -14,7 +14,7 @@ export default function ViewScreen() {
     return <div className="text-center">Property not found</div>;
   }
   return (
-    <div className="pt-20 container">
+    <div className="pt-20 container bg-white text-black">
       <Link href={'/property'}><button className='px-5 shadow-lg border-md'>Back</button></Link>
       <div className="card md:grid md:grid-cols-2 py-8 item-stretch flex flex-col-reverse">
         <div className="text self-center mt-8 md:mt-0">

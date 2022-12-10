@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Others() {
   return (
-    <div className='container py-20 grid justify-items-stretch'>
+    <div className='bg-white text-black container py-20 grid justify-items-stretch'>
         <div className="top grid md:grid-cols-2 gap-4 items-center justify-evenly">
             <Image 
             src='/images/property.jpeg'
