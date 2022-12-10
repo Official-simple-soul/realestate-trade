@@ -17,8 +17,8 @@ export default function Content() {
       <h1 className="text-center md:text-2xl  mt-16 mb-8 font-bold text-main">
         HOT SELLING PROPERTIES
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-        {random.slice(0, 6).map((item) => {
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        {random.slice(0, 8).map((item) => {
           return (
             <div className="card mb-4 shadow-lg p-4 rounded-lg" key={item.id}>
               <div className="card-img">

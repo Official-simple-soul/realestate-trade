@@ -15,7 +15,7 @@ export default function ViewScreen() {
   }
   return (
     <div className="pt-20 container">
-      <Link href={'/property'}><button className='px-5 shadow-lg border'>Back</button></Link>
+      <Link href={'/property'}><button className='px-5 shadow-lg border-md'>Back</button></Link>
       <div className="card md:grid md:grid-cols-2 py-8 item-stretch flex flex-col-reverse">
         <div className="text self-center mt-8 md:mt-0">
           <h1 className="md:text-2xl font-bold">{viewProperty.title}</h1>

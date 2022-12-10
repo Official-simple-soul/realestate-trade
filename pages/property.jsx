@@ -16,7 +16,7 @@ export default function Properties() {
   );
 
   return (
-    <div className="pt-20 grid md:grid-cols-6">
+    <div className="pt-20 grid md:grid-cols-6 bg-white">
       <Side />
       <div className="col-span-5 grid grid-cols-1 md:grid-cols-3 gap-2 mt-16">
       {     filteredData.length>0?filteredData.map((item, idx)=>{
@@ -30,7 +30,7 @@ export default function Properties() {
                     className='rounded-lg mb-4'
                   />
                 </div>
-                <div className="card-body">
+                <div className="card-body text-black">
                     <h1>{item.name}</h1>
                     <p>{item.location}</p>
                     <p>{item.landSize}</p>
@@ -56,7 +56,7 @@ export default function Properties() {
                     className='rounded-lg mb-4'
                   />
                 </div>
-                <div className="card-body">
+                <div className="card-body text-black">
                     <h1>{item.name}</h1>
                     <p>{item.location}</p>
                     <p>{item.landSize}</p>
@@ -81,7 +81,7 @@ export default function Properties() {
                   className='rounded-lg mb-4'
                 />
               </div>
-              <div className="card-body">
+              <div className="card-body text-black">
                   <h1>{item.name}</h1>
                   <p>{item.location}</p>
                   <p>{item.landSize}</p>
@@ -106,7 +106,7 @@ export default function Properties() {
                     className='rounded-lg mb-4'
                   />
                 </div>
-                <div className="card-body">
+                <div className="card-body text-black">
                     <h1>{item.name}</h1>
                     <p>{item.location}</p>
                     <p>{item.landSize}</p>
@@ -130,7 +130,7 @@ export default function Properties() {
                     className='rounded-lg mb-4'
                   />
                 </div>
-                <div className="card-body">
+                <div className="card-body text-black">
                     <h1>{item.name}</h1>
                     <p>{item.location}</p>
                     <p>{item.landSize}</p>

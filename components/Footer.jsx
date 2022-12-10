@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -7,6 +7,28 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
 export default function Footer() {
+    const [values, setValues] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+    const {name, email, message} = values;
+    const handleMail = (e) => setValues({...values, [e.target.name]: e.target.value});
+    const handleSubmit = async e=> {
+        e.preventDefault();
+    try {
+        await fetch('http://localhost:3000/api/contact', {
+        method: 'POST',
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify(values),
+    
+    });
+    } catch (err) {
+        console.log(err)
+    }
+    }
   return (
     <footer className='bg-main w-full text-white'>
         <div className="container px-3 md:text-left py-4 md:flex justify-between items-center">
@@ -31,19 +53,29 @@ export default function Footer() {
             </div>
             <div className="right md:w-96 mt-8 md:mt-0">
                 <h1 className='mt-3'>Reach out through our Email</h1>
-                <form action="" className=''>
+                <form onSubmit={handleSubmit}>
                     <input 
-                    type="email"
-                    placeholder='Your email'
+                    type="text"
+                    name='name'
+                    placeholder='Your name'
                     required
+                    value={name}
+                    onChange={handleMail}
                     className='bg-transparent px-2 border block w-full py-1 my-2 rounded'
                     />
-                    <textarea name="" id="" placeholder='Enter a message' rows="3" className='block p-2 bg-transparent border w-full rounded' required></textarea>
                     <input 
-                    type="submit" 
-                    value='submit'
-                    className='border px-1 my-2 rounded'
+                    type="email"
+                    name='email'
+                    placeholder='Your email'
+                    required
+                    value={email}
+                    onChange={handleMail}
+                    className='bg-transparent px-2 border block w-full py-1 my-2 rounded'
                     />
+                    <textarea name="message" id="" placeholder='Enter a message' rows="3" value={message} onChange={handleMail} className='block p-2 bg-transparent border w-full rounded' required></textarea>
+                    <button
+                    className='border px-1 my-2 rounded'
+                    >Send</button>
                 </form>
             </div>
         </div>

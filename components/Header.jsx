@@ -4,7 +4,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import Aside from './Aside';
 import Nav from './Nav';
-import SearchInput from './SearchInput'
+import SearchInput from './SearchInput';
 
 export default function Header() {
   const [openSide, setOpenSide] = useState(false);
@@ -13,7 +13,6 @@ export default function Header() {
   const [properties, setProperties] = useState(false);
   const menuRef = useRef();
 
-  
   useEffect(() => {
     let handler = (event) => {
       if (!menuRef.current.contains(event.target)) {
@@ -29,10 +28,12 @@ export default function Header() {
   const showSide = () => {
     setOpenSide(!openSide);
   };
-  
+
   return (
     <header className="z-40 fixed w-full flex justify-between items-center p-4 shadow-lg bg-fw text-main">
-      <Aside openSide={openSide} setOpenSide={setOpenSide} />
+      <Aside 
+      openSide={openSide} 
+      setOpenSide={setOpenSide} />
       <div className="flex items-center space-x-2">
         <FontAwesomeIcon
           icon={faBars}
@@ -44,17 +45,18 @@ export default function Header() {
           <h1 className="font-bold text-main">Real-Estate Trade</h1>
         </Link>
       </div>
-      <Nav 
-      openMenu={openMenu}
-      properties={properties}
-      setProperties={setProperties}
-      setOpenMenu={setOpenMenu} />
-      <SearchInput 
-      openMenu={openMenu}
-      setOpenMenu={setOpenMenu}
-      searchInput={searchInput}
-      setSearchInput={setSearchInput}
-      properties={properties}
+      <Nav
+        openMenu={openMenu}
+        properties={properties}
+        setProperties={setProperties}
+        setOpenMenu={setOpenMenu}
+      />
+      <SearchInput
+        openMenu={openMenu}
+        setOpenMenu={setOpenMenu}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        properties={properties}
       />
     </header>
   );
