@@ -1,3 +1,9 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+type Data = {
+  name: string
+}
+
 require('dotenv').config()
 
 const sgMail = require('@sendgrid/mail')
@@ -7,7 +13,8 @@ const {SG_API_KEY, FROM_EMAIL, TO_EMAIL} = process.env
 sgMail.setApiKey(SG_API_KEY)
 
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest,
+  res: NextApiResponse<Data>) {
   const {name, email, message} = req.body
 
   const msg = {
