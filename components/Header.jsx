@@ -13,17 +13,17 @@ export default function Header() {
   const [properties, setProperties] = useState(false);
   const menuRef = useRef();
 
-  useEffect(() => {
-    let handler = (event) => {
-      if (!menuRef.current.contains(event.target)) {
-        setOpenSide(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => {
-      document.removeEventListener('mousedown', handler);
-    };
-  });
+  // useEffect(() => {
+  //   let handler = (event) => {
+  //     if (!menuRef.current.contains(event.target)) {
+  //       setOpenSide(false);
+  //     }
+  //   };
+  //   document.addEventListener('mousedown', handler);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handler);
+  //   };
+  // });
 
   const showSide = () => {
     setOpenSide(!openSide);
@@ -37,9 +37,9 @@ export default function Header() {
       <div className="flex items-center space-x-2">
         <FontAwesomeIcon
           icon={faBars}
-          className="text-main"
+          className="text-main cursor-pointer"
           onClick={showSide}
-          ref={menuRef}
+          // ref={menuRef}
         />
         <Link href={'/'}>
           <h1 className="font-bold text-main">Real-Estate Trade</h1>
