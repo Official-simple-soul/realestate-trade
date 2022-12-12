@@ -11,6 +11,7 @@ export const transporter = nodemailer.createTransport({
         pass,
 
     },
+    secure: true
 })
 
 
