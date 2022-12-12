@@ -6,20 +6,10 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import { sendContact } from '../lib/app';
+import Form from '../components/Form'
 
 export default function Footer() {
-    const [values, setValues] = useState({
-        name: '',
-        email: '',
-        message: ''
-    })
-    const {name, email, message} = values;
-    const handleMail = (e) => setValues({...values, [e.target.name]: e.target.value});
-    const handleSubmit = async e=> {
-        e.preventDefault();
-
-        await sendContact(values) 
-    }
+    
   return (
     <footer className='bg-main w-full text-white'>
         <div className="container px-3 md:text-left py-4 md:flex justify-between items-center">
@@ -44,30 +34,7 @@ export default function Footer() {
             </div>
             <div className="right md:w-96 mt-8 md:mt-0">
                 <h1 className='mt-3'>Reach out through our Email</h1>
-                <form onSubmit={handleSubmit}>
-                    <input 
-                    type="text"
-                    name='name'
-                    placeholder='Your name'
-                    required
-                    value={name}
-                    onChange={handleMail}
-                    className='bg-transparent px-2 border block w-full py-1 my-2 rounded'
-                    />
-                    <input 
-                    type="email"
-                    name='email'
-                    placeholder='Your email'
-                    required
-                    value={email}
-                    onChange={handleMail}
-                    className='bg-transparent px-2 border block w-full py-1 my-2 rounded'
-                    />
-                    <textarea name="message" id="" placeholder='Enter a message' rows="3" value={message} onChange={handleMail} className='block p-2 bg-transparent border w-full rounded' required></textarea>
-                    <button
-                    className='border px-1 my-2 rounded'
-                    >Send</button>
-                </form>
+                <Form />
             </div>
         </div>
         <div className="text-center py-4 bottom border-t">

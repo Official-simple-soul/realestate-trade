@@ -10,6 +10,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'POST') {
     const data = req.body;
     const { name, email, message } = data;
+    if(!name || !email || !message) {
+      return res.status(400).json(data)
+    }
     try {
       await transporter.sendMail({
         ...mailOptions,
@@ -20,9 +23,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       });
       res.json({ success: true });
     } catch (err) {
-      console.log(err);
+      return res.status(400).json({message: err.message})
     }
   }
+  return res.status(400).json({message: 'Bad request'})
 };
 
 export default handler;
