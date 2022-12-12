@@ -7,7 +7,7 @@ type Data = {
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
-  if (req.method === 'POST') {
+  if (req.method !== 'POST') {
     const data = req.body;
     const { name, email, message } = data;
     if(!name || !email || !message) {
@@ -23,10 +23,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       });
       res.json({ success: true });
     } catch (err) {
-      return res.status(400).json({message: err.message})
+      return res.status(400).json({success: false})
     }
   }
-  return res.status(400).json({message: 'Bad request'})
+  return res.status(400).json({success: false})
 };
 
 export default handler;
