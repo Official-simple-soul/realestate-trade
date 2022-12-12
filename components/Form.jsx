@@ -67,8 +67,8 @@ export default function Form() {
       <FormControl
         isRequired
         isInvalid={touched.name && !values.name}
-        mb={5}
-        mt={5}
+        mb={2}
+        mt={3}
       >
         <FormLabel>Name</FormLabel>
         <Input
@@ -96,11 +96,12 @@ export default function Form() {
       <FormControl
         isRequired
         isInvalid={touched.message && !values.name}
-        mb={5}
+        mb={2}
       >
         <FormLabel>Message</FormLabel>
         <Textarea
           type="text"
+          mb={2}
           name="message"
           errorBorderColor="red.300"
           value={values.message}

@@ -4,7 +4,8 @@ const email = process.env.EMAIL
 const pass = process.env.EMAIL_PASS
 
 export const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    port: 465,
+    host: 'smtp.zoho.com',
     auth: {
         user: email,
         pass,
@@ -15,5 +16,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions ={
     from:email,
-    to:email
+    to:'abdurroheemsherifdeen@gmail.com'
 }
