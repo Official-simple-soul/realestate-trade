@@ -6,6 +6,17 @@ import Link from 'next/link';
 
 export default function Content() {
   const [random, setRandom] = useState([])
+ const [btn, setBtn] = useState([])
+ const arr = []
+ for(let i=1; i<=20; i++) {
+  arr.push(i)
+ }
+ useEffect(()=>{
+  setBtn(arr.slice(0,5))
+ }, [])
+ const handleBtn =()=> {
+  setBtn(arr.slice(5, 10))
+ }
  
   useEffect(()=>setRandom(data.sort(() => Math.random() - 0.5)), [])
 
@@ -13,6 +24,13 @@ export default function Content() {
     <div className="bg-white text-black h-[100%] col-span-5 p-4">
       <div className="">
         <TopContent />
+        {
+          btn.map(item=> {
+            return <>
+            <button onClick={handleBtn} className='border px-2 m-1'>{item}</button>
+            </>
+          })
+        }
       </div>
       <h1 className="text-center md:text-2xl  mt-16 mb-8 font-bold text-main">
         HOT SELLING PROPERTIES

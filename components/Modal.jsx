@@ -43,7 +43,6 @@ export default function Modal({ showModal, setShowModal, setCondition, setOpenSi
   useEffect(()=> {
     let newObj = localStorage.getItem('logindetails')
 const details =JSON.parse(newObj)
-console.log(details)
 if(details) {
   setCondition(false)
 }

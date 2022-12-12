@@ -5,6 +5,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import { sendContact } from '../lib/app';
 
 export default function Footer() {
     const [values, setValues] = useState({
@@ -16,18 +17,8 @@ export default function Footer() {
     const handleMail = (e) => setValues({...values, [e.target.name]: e.target.value});
     const handleSubmit = async e=> {
         e.preventDefault();
-    try {
-        await fetch('http://localhost:3000/api/contact', {
-        method: 'POST',
-        headers: {
-            "Content-Type": 'application/json',
-        },
-        body: JSON.stringify(values),
-    
-    });
-    } catch (err) {
-        console.log(err)
-    }
+
+        await sendContact(values) 
     }
   return (
     <footer className='bg-main w-full text-white'>
