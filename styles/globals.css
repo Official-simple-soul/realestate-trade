@@ -44,3 +44,9 @@ a {
     background: black;
   }
 }
+
+.text-stroke {
+  -webkit-text-stroke: 4px red !important;
+  color: white;
+}
+

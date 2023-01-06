@@ -1,21 +1,19 @@
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 
-const email = process.env.EMAIL
-const pass = process.env.EMAIL_PASS
+const email = process.env.EMAIL;
+const pass = process.env.EMAIL_PASS;
 
 export const transporter = nodemailer.createTransport({
-    port: 465,
-    host: 'smtp.zoho.com',
-    auth: {
-        user: email,
-        pass,
+  port: 465,
+  host: 'smtp.zoho.com',
+  auth: {
+    user: email,
+    pass,
+  },
+  secure: true,
+});
 
-    },
-    secure: true
-})
-
-
-export const mailOptions ={
-    from:email,
-    to:'abdurroheemsherifdeen@gmail.com'
-}
+export const mailOptions = {
+  from: email,
+  to: 'abdurroheemsherifdeen@gmail.com',
+};

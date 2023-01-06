@@ -42,7 +42,7 @@ export default function Header() {
           // ref={menuRef}
         />
         <Link href={'/'}>
-          <h1 className="font-bold text-main">Real-Estate Trade</h1>
+          <h1 className="font-bold text-main">Trade & Auction</h1>
         </Link>
       </div>
       <Nav

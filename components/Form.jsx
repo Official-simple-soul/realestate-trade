@@ -8,7 +8,6 @@ import {
   Textarea,
   Text,
 } from '@chakra-ui/react';
-import { setConstantValue } from 'typescript';
 import { sendContact } from '../lib/app';
 import { useToast } from '@chakra-ui/react';
 
